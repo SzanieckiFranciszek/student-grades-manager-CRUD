@@ -9,14 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Courses {
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
     private String description;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "coursesId")
-    private Courses courses;
 }

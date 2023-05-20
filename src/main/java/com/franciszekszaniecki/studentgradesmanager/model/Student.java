@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,10 +22,10 @@ public class Student {
     private String email;
     private String password;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "coursesId")
-    private Courses courses;
+    @JoinColumn(name = "course_id")
+    private Course course;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "assessmentId")
-    private AssessmentStudent assessment;
+    @JoinColumn(name = "assessment_id")
+    private Assessment assessment;
     private int activeStatus;
 }

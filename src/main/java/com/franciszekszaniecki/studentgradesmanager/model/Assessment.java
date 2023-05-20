@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class AssessmentStudent {
+public class Assessment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String name;
+    private String value;
     private String description;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "coursesId")
-    private Courses courses;
+    @JoinColumn(name = "course_id")
+    private Course course;
 }
